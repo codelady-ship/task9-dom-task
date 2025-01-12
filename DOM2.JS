@@ -80,12 +80,6 @@ function calculateResult() {
 function clearDisplay() {
     display.value = ""; }// Display-i təmizləyir
 
-
-
-
-
-
-
 //4. Faktoriali hesablayan proqram
 
  /* document.getElementById("submit").onclick = function() {
@@ -124,8 +118,6 @@ document.getElementById("reset").onclick = function() {
 reset.onclick = function() {
     faktorial_input.value = "";
 };
-
-
 
 
 //5.lampa
