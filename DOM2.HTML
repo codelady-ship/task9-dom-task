@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-task9</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./dom2task.css">
+</head>
+     <!-- task1 -->
+    <h1>"NOD list ve HTML COLLECTION"nun oxşar ve ferqli xüsusiyyetleri </h1>
+    <table >
+     <thead>
+      <tr id="tableHead"></tr>
+     </thead>
+      <tbody id="tableBody"></tbody >
+    </table>
+      <!-- mobile menu -->
+       <div class="navbar">
+          <div class="logo">
+             <a href="./DOM2.HTML"><h1>Logo</h1></a>
+            </div><!-- logo -->
+          <div class="links">
+                <a href="#">home</a>
+                <a href="#">about</a>
+                <a href="#">phone</a>
+                <a href="#">connect</a>
+            </div> <!-- links -->
+          <div class="bars" >
+                <i class="fa-solid fa-bars" id="bars"></i>
+            </div>
+        </div><!--navbar-->
+      <div class="mobilemenu hide" id="mobilemenu">
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">phone</a>
+        <a href="#">connect</a>
+    </div><!--mobile menu-->
+     
+
+
+     <!-- faktorial hesablayacaq proqram -->
+    <div class="factorial" >
+      <h2 class="faktor">Faktoriali hesablanacaq bir eded daxil edin</h2>
+      <input type="text" placeholder="eded daxil et" class="faktorial_input" id="faktorial_input"> <br>
+      <input type="submit" value="Cavabı Hesabla" id="submit">
+      <input type="reset" value="Yeni eded üçün sil" id="reset">
+    </div>
+     
+    <!-- calculator -->
+    <div class="calculator">
+      <input type="text" id="display" disabled> <!-- Hesablama ekranı -->
+      <div class="buttons">
+          <button class="btn" onclick="Display('1')">1</button>
+          <button class="btn" onclick="Display('2')">2</button>
+          <button class="btn" onclick="Display('3')">3</button>
+          <button class="btn" onclick="Display('+')">+</button>
+          <button class="btn" onclick="Display('4')">4</button>
+          <button class="btn" onclick="Display('5')">5</button>
+          <button class="btn" onclick="Display('6')">6</button>
+          <button class="btn" onclick="Display('-')">-</button>
+          <button class="btn" onclick="Display('7')">7</button>
+          <button class="btn" onclick="Display('8')">8</button>
+          <button class="btn" onclick="Display('9')">9</button>
+          <button class="btn" onclick="Display('*')">*</button>
+          <button class="btn" onclick="Display('0')">0</button>
+          <button class="btn" onclick="Display('.')">.</button>
+          <button class="btn" onclick="clearDisplay()">sil</button>
+          <button class="btn" onclick="Display('/')">/</button>
+          <button class="btn equal" onclick="calculateResult()">=</button>
+      </div>
+  </div>
+      <!-- lampa -->
+       <br>
+       <button id="btn">yandir/sondur</button>
+        <img src="./foto/pic_bulbon.gif" alt="" id="lamp">
+
+    <script src="./DOM2.JS"></script>
+</body>
+</html>

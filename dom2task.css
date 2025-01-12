@@ -1,0 +1,129 @@
+*{
+text-decoration: none;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+outline: none;
+color: rgb(10, 10, 12);
+margin:5px;
+}
+
+/*navbar ucun css*/
+html body{overflow-x: hidden;}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ddd;
+}
+.navbar.links a{
+    margin-left: 10px;}
+.bars{
+    cursor: pointer;
+    display: none;}
+@media(max-width:768px){
+    .links{
+        display: none;
+    }
+    .bars{display: block;}
+}
+.mobilemenu{
+    display: flex;
+flex-direction: column;
+background-color: rgb(188, 190, 190);
+max-width: 200px;
+padding: 30px;
+font-size: 20px;
+gap: 20px;
+position: fixed;
+right:0;
+top: 250px;
+transition: 0.5s;
+}
+.hide{right: -100%;}
+
+
+/*faktorial fesablayan proqram*/
+.faktor{
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    margin:  5px 15px ;
+    background-color: aquamarine;
+}
+.faktorial_input{
+    padding: 5px;
+    margin: 5px 55px;
+}
+#submit,#reset{
+    padding: 5px;
+    margin-left:15px;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+/*calculator*/
+.calculator {
+    width: 220px;
+    background-color: rgb(109, 155, 140);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+}
+
+#display {
+    width: 90%;
+    height: 50px;
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 0.5fr);/*şəbəkə konteyneri 4 sütunlu olacaq. 0.5fr olcude*/
+    gap: 1px;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+button.equal {
+    grid-column: span 4;/*bu element 4 sütunu əhatə edəcək, yəni həmin elementin genişliyi 4 sütunun genişliyinə bərabər olacaq.*/
+    background-color: #0a0e0a;
+    color: white;
+}
+
+button.equal:hover {
+    background-color: #83ad85;
+}
+
+/*cedvel*/
+table{width: 300px;
+}
+table,thead,tr,th{
+    padding: 15px;
+    border: 1px solid;
+    border-collapse:collapse ;/*cedvelde iki xanain divarini birlesdirir arasini */
+}
+
+
+/*lampa*/
+.btn{margin: 5px;}
+img{width: 80px;
+height: 100px;}
