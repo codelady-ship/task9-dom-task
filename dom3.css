@@ -1,0 +1,23 @@
+
+#tableHead{background-color: rgb(49, 226, 64);}
+    table,thead,tr,th{
+    padding: 5px;
+    border: 1px solid;
+    border-collapse:collapse ;
+    }
+    .buttons{width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        color: black;
+    }
+    button,input{
+        width: 95px;
+        padding: 3px;
+        margin: 3px;
+        background-color: rgb(49, 226, 64);
+        cursor: pointer;
+        
+    }
+    button:hover, input:hover{
+        background-color: #dfecde;
+    }
