@@ -5,7 +5,7 @@
     border: 1px solid;
     border-collapse:collapse ;
     }
-    .buttons{width: 800px;
+    .buttons{width: 450px;
         display: flex;
         flex-wrap: wrap;
         color: black;
@@ -21,3 +21,5 @@
     button:hover, input:hover{
         background-color: #dfecde;
     }
+    .even{background-color: rgb(148, 236, 177);}
+    .odd{background-color: rgb(194, 250, 63);}

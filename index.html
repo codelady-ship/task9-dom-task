@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, thead, tr, th {
+            padding: 5px;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        .even {
+            background-color: rgb(236, 198, 148);
+        }
+        .odd {
+            background-color: rgb(209, 206, 206);
+        }
+        .buttons {
+            width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            color: black;
+        }
+        button, input {
+            width: 150px;
+            padding: 3px;
+            margin: 3px;
+            background-color: rgb(49, 226, 64);
+            cursor: pointer;
+        }
+        button:hover, input:hover {
+            background-color: #dfecde;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Axtarış sahələri -->
+<div class="buttons">
+    <button id="newbtn">Yeni istifadəçi əlavə et</button>
+    <input type="text" placeholder="Adla axtar" id="search-name">
+    <input type="text" placeholder="Soyadla axtar" id="search-surname">
+    <input type="text" placeholder="E-mail ilə axtar" id="search-email">
+    <input type="text" placeholder="Telefonla axtar" id="search-phone">
+    <input type="text" placeholder="Hamısını axtar" id="search-all">
+</div>
+
+<!-- Cədvəl -->
+<table>
+    <thead>
+        <tr id="tableHead"></tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+const thead = document.getElementById("tableHead");
+const heading = ["id", "ad", "soyad", "email", "telefon nömrəsi", "şəhər"];
+
+heading.forEach((head) => {
+    thead.innerHTML += `<th>${head.toUpperCase()}</th>`;
+});
+
+const users = [
+    {id: 0, name: "Leanne", surname: "Graham", email: "leanne@example.com", phonenumber: "1-770-736-8031", city: "Gwenborough"},
+    {id: 1, name: "Ervin", surname: "Howell", email: "ervin@example.com", phonenumber: "010-692-6593", city: "Wisokyburgh"},
+    {id: 2, name: "Carmen", surname: "Beck", email: "carmen@example.com", phonenumber: "781-329-8637", city: "Meyersville"},
+    {id: 3, name: "Anna", surname: "Smith", email: "anna.smith@example.com", phonenumber: "1-800-555-1234", city: "Springfield"},
+    {id: 4, name: "John", surname: "Doe", email: "john.doe@example.com", phonenumber: "1-800-555-5678", city: "Centerville"},
+    {id: 5, name: "Olivia", surname: "Johnson", email: "olivia.johnson@example.com", phonenumber: "1-800-555-2345", city: "Lakeside"},
+    {id: 6, name: "Emma", surname: "Miller", email: "lucas.miller@example.com", phonenumber: "1-800-555-6789", city: "Centerville"},
+    {id: 7, name: "Emma", surname: "Taylor", email: "emma.taylor@example.com", phonenumber: "1-800-555-5432", city: "Centerville"}
+];
+
+const tbody = document.getElementById("tableBody");
+
+// Funksiya: İstifadəçiləri cədvəldə göstərmək
+const showUsers = (filteredUsers) => {
+    tbody.innerHTML = "";
+    filteredUsers.forEach((user) => {
+        tbody.innerHTML += `
+            <tr class="${(user.id % 2 === 0) ? 'even' : 'odd'}">
+                <th>${user.id + 1}</th>
+                <th>${user.name}</th>
+                <th>${user.surname}</th>
+                <th>${user.email}</th>
+                <th>${user.phonenumber}</th>
+                <th>${user.city}</th>
+            </tr>
+        `;
+    });
+};
+
+// İlk olaraq bütün istifadəçiləri göstərmək
+showUsers(users);
+
+// Yeni istifadəçi əlavə etmək
+const newbtn = document.getElementById("newbtn");
+newbtn.onclick = () => {
+    const name = prompt("Adı əlavə et");
+    const surname = prompt("Soyadı əlavə et");
+    const email = prompt("E-maili əlavə et");
+    const phone = prompt("Telefon nömrəsini əlavə et ('-' ilə)");
+    const city = prompt("Şəhəri əlavə et");
+    const obj = {
+        id: users.length,
+        name,
+        surname,
+        email,
+        phonenumber: phone,
+        city
+    };
+    users.push(obj);
+    showUsers(users);
+};
+
+// Axtarış filtrini tətbiq etmək
+const searchByName = document.getElementById("search-name");
+const searchBySurname = document.getElementById("search-surname");
+const searchByEmail = document.getElementById("search-email");
+const searchByPhone = document.getElementById("search-phone");
+const searchAll = document.getElementById("search-all");
+
+// Filtrləmə funksiyası
+const filterUsers = () => {
+    const nameValue = searchByName.value.toLowerCase();
+    const surnameValue = searchBySurname.value.toLowerCase();
+    const emailValue = searchByEmail.value.toLowerCase();
+    const phoneValue = searchByPhone.value.toLowerCase();
+    const allValue = searchAll.value.toLowerCase();
+
+    const filteredUsers = users.filter((user) => {
+        return (
+            (user.name.toLowerCase().includes(nameValue) || nameValue === "") &&
+            (user.surname.toLowerCase().includes(surnameValue) || surnameValue === "") &&
+            (user.email.toLowerCase().includes(emailValue) || emailValue === "") &&
+            (user.phonenumber.toLowerCase().includes(phoneValue) || phoneValue === "") &&
+            (user.name.toLowerCase().includes(allValue) || 
+             user.surname.toLowerCase().includes(allValue) || 
+             user.email.toLowerCase().includes(allValue) || 
+             user.phonenumber.toLowerCase().includes(allValue) || 
+             user.city.toLowerCase().includes(allValue) || allValue === "")
+        );
+    });
+
+    showUsers(filteredUsers);
+};
+
+// Hər axtarış sahəsi üçün hadisə dinləyicilərini əlavə et
+searchByName.oninput = filterUsers;
+searchBySurname.oninput = filterUsers;
+searchByEmail.oninput = filterUsers;
+searchByPhone.oninput = filterUsers;
+searchAll.oninput = filterUsers;
+
+</script>
+
+</body>
+</html>
