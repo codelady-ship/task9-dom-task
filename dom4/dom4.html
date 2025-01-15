@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom4 task</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./dom4.css">
+</head>
+<body>
+    
+    <!-- foto yuklenmesi -->
+    <label for="file" >Foto Yüklə (PNG, JPEG formatında)</label>
+    <br>
+    <input type="file" accept=".jpeg,.png" id="file">
+    <br>
+    <img id="image-preview" src="" title="Şəkil önizləməsi">
+    <!-- dark lite butonu ucun tek gunesi qoyuruq-->
+    <i class="fa fa-sun"></i>
+     <!-- oyun -->
+    <h1>Tic Tac Toe</h1>
+    <div id="gameBoard" class="game-board">
+        <div class="cell" data-cell-index="0"></div>
+        <div class="cell" data-cell-index="1"></div>
+        <div class="cell" data-cell-index="2"></div>
+        <div class="cell" data-cell-index="3"></div>
+        <div class="cell" data-cell-index="4"></div>
+        <div class="cell" data-cell-index="5"></div>
+        <div class="cell" data-cell-index="6"></div>
+        <div class="cell" data-cell-index="7"></div>
+        <div class="cell" data-cell-index="8"></div>
+    </div>
+    <button id="resetBtn">Oyunu Yenilə</button>
+    <script src="./dom4.js"></script>
+</body>
+</html>

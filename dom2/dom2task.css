@@ -28,7 +28,7 @@ html body{overflow-x: hidden;}
     .bars{display: block;}
 }
 .mobilemenu{
-    display: flex;
+display: flex;
 flex-direction: column;
 background-color: rgb(188, 190, 190);
 max-width: 200px;

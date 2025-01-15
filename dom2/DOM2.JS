@@ -66,7 +66,11 @@ bars.onclick = () => {
     isshowmenu = !isshowmenu;  // Menü vəziyyətini dəyişirik
     showhidemenu();  // Yeni vəziyyəti tətbiq edirik
 };
-
+/*yuxarinin evezine qisa yazsaq
+bars.onclick = () => {
+     bars.classlist.toggle("fa-x")
+     mobilemenu.classList.toggle("hide");
+};
 //3. Calculator yazin
 const display = document.getElementById("display");
 function Display(value) {

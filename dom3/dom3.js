@@ -67,7 +67,7 @@ const search_phonenumber = document.getElementById("search-phonenumber");
 const search_city = document.getElementById("search-city");
 const search = document.getElementById("search");
 search_name.oninput = (event) => {
-    const val = event.target.value.toUpperCase();  
+    const val = event.target.value.toUpperCase(); // istifadecinin verdiyi 
     const filterUsers = users.filter((u) => u.name.toUpperCase().includes(val)); 
     showUsers(filterUsers);  // Filtrələnmiş istifadəçiləri göstərmək
 };
@@ -91,7 +91,7 @@ search_email.oninput = (event) => {
 
         search_city.oninput = (event) => {
             const val = event.target.value.toUpperCase();  
-            console.log("Daxil edilən dəyər:", val);
+            //console.log("Daxil edilən dəyər:", val);
             const filterUsers = users.filter((u) => u.city.toUpperCase().includes(val)); 
             showUsers(filterUsers);  
         };
