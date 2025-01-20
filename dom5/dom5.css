@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.navbar{
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    background-color: rgb(51, 139, 161);
+}
+a{
+    color: white;
+    font-size:30px ;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.cars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Düzeltme: repeat(4 1fr) yerine repeat(4, 1fr) */
+    padding: 20px;
+    gap: 20px;
+}
+.car{
+    width: 250px;
+    padding: 10px;
+    color:rgb(51, 139, 161) ;
+}
+.car img{width: 180px;
+height: 180px;}
+
+.carsBox input,.carsBox h1{
+    padding: 10px;
+    margin: 5px 28px;
+    color:rgb(51, 139, 161) ;
+}
+
+
+/*body dark moduna css veririk */
+.fa-sun{
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 6px 5px;
+    position: fixed;
+    right: 20px;
+   color: aliceblue;
+   top: 15px;}/*sun ucun css veririk hem de moon ucun isleyecek*/
+  
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+} 
+body.dark-mode .car {
+    color: #cfcfcf; /* Açık gri metin rengi */
+}
+
+/* Dark mode'da input ve başlıkları deyiştir */
+body.dark-mode .carsBox input,
+body.dark-mode .carsBox h1,body.dark-mode a{
+    color: #cfcfcf; /* Açık gri metin rengi */
+}
+
+
+/*modele gore button*/
+.models{
+    margin: 5px 28px;
+    padding: 10px;
+    button img{
+        width: 30px;
+        height:30px;}
+}
+
+   
+   
